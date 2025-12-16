@@ -38,3 +38,14 @@
     transform: rotate(360deg);
   }
 }
+
+.theme-dot {
+    border: 2px solid #ffffff;        /* outer white ring */
+    outline: 1px solid rgba(0,0,0,0.4); /* inner dark contrast */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-dot:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 6px rgba(255,255,255,0.8);
+}
