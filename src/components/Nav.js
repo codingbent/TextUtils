@@ -3,17 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 
 export default function Nav(props) {
     return (
-        <nav
-            className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} shadow-sm`}
-        >
+        <nav className="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm">
             <div className="container-fluid px-4">
                 {/* Brand */}
-                <Link
-                    className={`navbar-brand fw-bold text-${
-                        props.mode === "light" ? "dark" : "light"
-                    }`}
-                    to="/"
-                >
+                <Link className="navbar-brand fw-bold text-white" to="/">
                     {props.title}
                 </Link>
 
@@ -36,14 +29,10 @@ export default function Nav(props) {
                         <li className="nav-item">
                             <NavLink
                                 className={({ isActive }) =>
-                                    `nav-link ${
+                                    `nav-link text-white ${
                                         isActive
                                             ? "fw-semibold border-bottom border-2"
                                             : ""
-                                    } text-${
-                                        props.mode === "light"
-                                            ? "dark"
-                                            : "light"
                                     }`
                                 }
                                 to="/"
@@ -55,14 +44,10 @@ export default function Nav(props) {
                         <li className="nav-item">
                             <NavLink
                                 className={({ isActive }) =>
-                                    `nav-link ${
+                                    `nav-link text-white ${
                                         isActive
                                             ? "fw-semibold border-bottom border-2"
                                             : ""
-                                    } text-${
-                                        props.mode === "light"
-                                            ? "dark"
-                                            : "light"
                                     }`
                                 }
                                 to="/about"
@@ -72,15 +57,9 @@ export default function Nav(props) {
                         </li>
                     </ul>
 
-                    {/* Theme Palette */}
+                    {/* Theme Palette (controls BODY only) */}
                     <div className="d-flex align-items-center gap-2">
-                        <span
-                            className={`text-${
-                                props.mode === "light" ? "dark" : "light"
-                            } small me-2`}
-                        >
-                            Theme:
-                        </span>
+                        <span className="text-white small me-2">Theme:</span>
 
                         {[
                             "primary",
@@ -92,11 +71,11 @@ export default function Nav(props) {
                         ].map((color) => (
                             <div
                                 key={color}
-                                className={`bg-${color} rounded-circle border`}
+                                className={`bg-${color} rounded-circle border border-light`}
                                 onClick={() => props.togglemode(color)}
                                 style={{
-                                    height: "22px",
-                                    width: "22px",
+                                    height: "20px",
+                                    width: "20px",
                                     cursor: "pointer",
                                 }}
                                 title={color}
