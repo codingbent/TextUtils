@@ -42,7 +42,10 @@ export default function TextForm(props) {
             >
                 {props.heading}
             </h2>
-            <p className="text-muted mb-3">
+            <p
+                className="text-muted mb-3"
+                style={{ color: props.mode === "dark" ? "white" : "#111" }}
+            >
                 Convert, clean, and analyze your text instantly
             </p>
 
